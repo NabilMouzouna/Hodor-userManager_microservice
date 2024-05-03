@@ -5,11 +5,13 @@ import deleteUserById from "../controllers/deleteUser"
 import createUser from "../controllers/createUser"
 import getAllUsers from "../controllers/getAllUsers"
 import updateUserById from "../controllers/updateUser"
+import getUserById from "../controllers/getUserById"
+
 
 const router = Router()
 
 // Get user by id
-router.get('/:userId',getAllUsers)
+router.get('/:userId',getUserById)
 
 // Update user selected by id
 router.put('/:userId',updateUserById)
