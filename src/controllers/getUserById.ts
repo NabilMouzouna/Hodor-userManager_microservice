@@ -4,8 +4,7 @@ import { SuccessResponseType } from "../types/responseType"
 
 const getUserById = async (req : Request,res : Response) => { 
     try {
-        const User =  await user.findById(req.params.userId)
-
+        const User = await user.findById(req.params.userId)
         const response : SuccessResponseType = {
             message : "user was found in the database",
             user : {userId : User!.id,username : User!.username, email : User!.email, profilePicture : User!.profilePicture || ""}
@@ -13,6 +12,5 @@ const getUserById = async (req : Request,res : Response) => {
         return res.status(200).json(response)
     } catch (error) {return res.status(400).json(error)}
  }
-
 
 export default getUserById
